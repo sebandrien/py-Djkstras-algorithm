@@ -24,19 +24,35 @@ def calculate_distances(graph, starting_vertex):
 
     return distances, paths
 
-graph = {
+graph_a = {
     'A': {'B': 1, 'C': 3},
     'B': {'A': 1, 'C': 2, 'D': 1},
     'C': {'A': 3, 'B': 2, 'D': 1},
     'D': {'B': 1, 'C': 1},
 }
 
-distances, paths = calculate_distances(graph, 'A')
+graph_b = {
+    'A': {'B': 1, 'C': 3},
+    'B': {'A': 1, 'C': 2, 'D': 1},
+    'C': {'A': 3, 'B': 2, 'D': 1},
+    'D': {'B': 1, 'C': 4},
+    'E': {'C': 5, 'D': 1},
+    'F': {'C': 6, 'D': 7},
+    'G': {'B': 1, 'C': 1},
+}
+
+distances, paths = calculate_distances(graph_a, 'A')
 print("Shortest distances:", distances)
 
-# Find the farthest node
-farthest_node = max(distances, key=distances.get)
+farthest_node = max(distances, key=distances.get) # Find the farthest node
 print("Farthest node:", farthest_node)
 
-# Get the shortest path to the farthest node
-print("Shortest path from starting node to farthest node:", paths[farthest_node])
+print("Shortest path from starting node to farthest node:", paths[farthest_node]) 
+
+distances, paths = calculate_distances(graph_b, 'A')
+print("Shortest distances:", distances)
+
+farthest_node = max(distances, key=distances.get) # Find the farthest node
+print("Farthest node:", farthest_node)
+
+print("Shortest path from starting node to farthest node:", paths[farthest_node]) # Get the shortest path to the farthest node
