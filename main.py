@@ -1,5 +1,4 @@
-# Importing the heapq module for Priority Queue
-import heapq
+import heapq # Importing the heapq module for Priority Queue
 
 def calculate_distances(graph, starting_vertex):
     distances = {vertex: float('infinity') for vertex in graph}
