@@ -31,28 +31,15 @@ graph_a = {
     'D': {'B': 1, 'C': 1},
 }
 
-graph_b = {
-    'A': {'B': 1, 'C': 3},
-    'B': {'A': 1, 'C': 2, 'D': 1},
-    'C': {'A': 3, 'B': 2, 'D': 1},
-    'D': {'B': 1, 'C': 4},
-    'E': {'C': 5, 'D': 1},
-    'F': {'C': 6, 'D': 7},
-    'G': {'B': 1, 'C': 1},
-}
+# User input for starting and ending vertex
+start_vertex = input("Enter the starting vertex: ")
+end_vertex = input("Enter the ending vertex: ")
 
-distances, paths = calculate_distances(graph_a, 'A')
-print("Shortest distances:", distances)
+distances, paths = calculate_distances(graph_a, start_vertex)
 
-farthest_node = max(distances, key=distances.get) # Find the farthest node
-print("Farthest node:", farthest_node)
-
-print("Shortest path from starting node to farthest node:", paths[farthest_node]) 
-
-distances, paths = calculate_distances(graph_b, 'A')
-print("Shortest distances:", distances)
-
-farthest_node = max(distances, key=distances.get) # Find the farthest node
-print("Farthest node:", farthest_node)
-
-print("Shortest path from starting node to farthest node:", paths[farthest_node]) # Get the shortest path to the farthest node
+# Check if the ending vertex is in the distances dictionary
+if end_vertex in distances:
+    print("Shortest distance from {} to {}: {}".format(start_vertex, end_vertex, distances[end_vertex]))
+    print("Path:", paths[end_vertex])
+else:
+    print("Path does not exist from {} to {}.".format(start_vertex, end_vertex))
