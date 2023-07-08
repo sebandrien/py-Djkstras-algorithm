@@ -24,14 +24,14 @@ def calculate_distances(graph, starting_vertex):
 
     return distances, paths
 
-graph_1 = {
+graph = {
     'A': {'B': 1, 'C': 3},
     'B': {'A': 1, 'C': 2, 'D': 1},
     'C': {'A': 3, 'B': 2, 'D': 1},
     'D': {'B': 1, 'C': 1},
 }
 
-distances, paths = calculate_distances(graph_1, 'A')
+distances, paths = calculate_distances(graph, 'A')
 print("Shortest distances:", distances)
 
 # Find the farthest node
