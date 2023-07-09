@@ -44,7 +44,7 @@ graph_b = {
 start_vertex = 'A'
 end_vertex = 'D'
 distance, path = calculate_distances(graph_a, start_vertex, end_vertex)
-print(f"Pathed from: {start_vertex} to: {end_vertex}")
+print(f"Pathed from: {start_vertex} to {end_vertex}")
 print("Shortest distance to target:", distance)
 print("Shortest path to target:", ' -> '.join(path))
 
