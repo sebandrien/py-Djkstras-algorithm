@@ -1,6 +1,6 @@
-import heapq # Importing the heapq module for Priority Queue
+import heapq
 
-def calculate_distances(graph, starting_vertex):
+def calculate_distances(graph, starting_vertex, target_vertex):
     distances = {vertex: float('infinity') for vertex in graph}
     distances[starting_vertex] = 0
 
@@ -22,7 +22,7 @@ def calculate_distances(graph, starting_vertex):
                 paths[neighbor] = paths[current_vertex] + [neighbor]
                 heapq.heappush(pq, (distance, neighbor))
 
-    return distances, paths
+    return distances[target_vertex], paths[target_vertex]
 
 graph_a = {
     'A': {'B': 1, 'C': 3},
@@ -41,22 +41,18 @@ graph_b = {
     'G': {'C': 8},
 }
 
-distances, paths = calculate_distances(graph_a, 'A')
-print("Shortest distances:", distances)
-
-farthest_node = max(distances, key=distances.get) # Find the farthest node
-print("Farthest node:", {farthest_node})
-
-print("Shortest path from starting node to farthest node:", {' -> '.join(paths[farthest_node])})
+start_vertex = 'A'
+end_vertex = 'D'
+distance, path = calculate_distances(graph_a, start_vertex, end_vertex)
+print(f"Pathed from: {start_vertex} to: {end_vertex}")
+print("Shortest distance to target:", distance)
+print("Shortest path to target:", ' -> '.join(path))
 
 print("\n")
 
-distances, paths = calculate_distances(graph_b, 'A')
-print("Shortest distances:", distances)
-
-farthest_node = max(distances, key=distances.get) # Find the farthest node
-print("Farthest node:", {farthest_node})
-
-print("Shortest path from starting node to farthest node:", {' -> '.join(paths[farthest_node])})
-
- # Get the shortest path to the farthest node# Get the shortest path to the farthest node
+start_vertex = 'A'
+end_vertex = 'G'
+distance, path = calculate_distances(graph_b, start_vertex, end_vertex)
+print(f"Pathed from: {start_vertex} to: {end_vertex}")
+print("Shortest distance to target:", distance)
+print("Shortest path to target:", ' -> '.join(path))
