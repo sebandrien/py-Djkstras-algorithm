@@ -4,7 +4,7 @@ O((V+E) log V)
 A graph illustrated by vertexes, and weighted edges.
 
 graph_a
-![Graph A](graph_a.png)
+![Graph A](graph_a.PNG)
 
 
 graph_b
