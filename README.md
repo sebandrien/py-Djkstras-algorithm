@@ -8,4 +8,4 @@ graph_a
 
 
 graph_b
-![Graph B](graph_b.PNG)
+![Graph B](graph_b.png)
