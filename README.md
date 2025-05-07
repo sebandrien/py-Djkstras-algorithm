@@ -1,4 +1,4 @@
-# PY Dijkstra's algorithm
+# Python Dijkstra's algorithm
 
 Implementaion of Dijkstra's algorithim in Python to find the shortest path between two vertices in a weighted graph. 
 
